@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_series/src/views/home/home.page.dart';
+import 'package:marvel_series/src/views/commons/routes/routes.dart';
+import 'package:marvel_series/src/views/commons/routes/routes.strings.dart';
 
 void main() => runApp(Main());
 
@@ -11,7 +12,8 @@ class Main extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      initialRoute: RoutesStrings.home,
+      routes: routes,
     );
   }
 }
