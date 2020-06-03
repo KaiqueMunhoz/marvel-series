@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_series/features/series/core/routes/routes.dart';
-import 'package:marvel_series/features/series/core/routes/routes.strings.dart';
+import 'package:marvel_series/core/routes/routes.dart';
+import 'package:marvel_series/core/routes/routes.strings.dart';
 import 'injection_container.dart' as di;
 
 void main() async {

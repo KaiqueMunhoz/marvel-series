@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:marvel_series/features/series/core/network/http.dart';
+import 'package:marvel_series/core/network/http.dart';
 import 'package:marvel_series/features/series/data/models/serie.model.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
