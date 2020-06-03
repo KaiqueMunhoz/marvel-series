@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'features/series/data/datasources/series_remote_data_source.dart';
 import 'features/series/data/repositories/series.repo.impl.dart';
 import 'features/series/domain/repositories/series.repo.dart';
-import 'features/series/domain/usecases/series_list.dart';
+import 'features/series/domain/usecases/get_series.dart';
 import 'features/series/presentation/bloc/series_bloc.dart';
 
 final sl = GetIt.instance;
@@ -13,11 +13,11 @@ final sl = GetIt.instance;
 void _initFeatures() {
   // Bloc
   sl.registerFactory(
-    () => SeriesBloc(seriesList: sl()),
+    () => SeriesBloc(getSeries: sl()),
   );
 
   // Use cases
-  sl.registerLazySingleton(() => SeriesList(sl()));
+  sl.registerLazySingleton(() => GetSeries(sl()));
 
   // Repository
   sl.registerLazySingleton<SeriesRepo>(

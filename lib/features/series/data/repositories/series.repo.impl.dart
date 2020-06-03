@@ -14,7 +14,7 @@ class SeriesRepoImpl implements SeriesRepo {
   });
 
   @override
-  Future<Either<Failure, List<Serie>>> seriesList() async {
+  Future<Either<Failure, List<Serie>>> getSeries() async {
     try {
       final remoteSeries = await remoteDataSource.seriesList();
       return Right(remoteSeries);
