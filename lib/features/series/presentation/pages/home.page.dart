@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_series/features/series/presentation/base/base.page.dart';
+import 'package:marvel_series/features/series/presentation/bloc/series_bloc.dart';
 import 'package:marvel_series/injection_container.dart';
-import 'package:marvel_series/src/blocs/series/series_bloc.dart';
-import 'package:marvel_series/src/views/base/base.page.dart';
 
 class Home extends StatelessWidget {
   @override

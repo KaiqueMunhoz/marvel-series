@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'package:marvel_series/src/data/models/serie.model.dart';
-import 'package:marvel_series/src/domain/entities/series.dart';
+
+import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/usecases/series_list.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:marvel_series/src/domain/usecases/series_list.dart';
 
 part 'series_event.dart';
 part 'series_state.dart';

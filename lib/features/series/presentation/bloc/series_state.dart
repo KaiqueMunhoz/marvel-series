@@ -15,7 +15,7 @@ class SeriesLoading extends SeriesState {
 }
 
 class SeriesLoaded extends SeriesState {
-  final List<SerieModel> series;
+  final List<Serie> series;
   SeriesLoaded(this.series);
 
   @override

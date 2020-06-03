@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:marvel_series/src/core/network/http.dart';
-import 'package:marvel_series/src/data/models/serie.model.dart';
+import 'package:marvel_series/features/series/core/network/http.dart';
+import 'package:marvel_series/features/series/data/models/serie.model.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
@@ -22,9 +22,7 @@ class SeriesRemoteDataSourceImpl implements SeriesRemoteDataSource {
   @override
   Future<List<SerieModel>> seriesList() async {
     final response = await client.get(url, headers: Http.headers);
-    if (response.statusCode == 200) {
-      Map<String, dynamic> data = json.decode(response.body);
-      return Response.fromJson(data).data.results;
-    } else {}
+    Map<String, dynamic> data = json.decode(response.body);
+    return Response.fromJson(data).data.results;
   }
 }

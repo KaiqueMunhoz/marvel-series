@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:marvel_series/src/core/error/exceptions.dart';
-import 'package:marvel_series/src/core/error/failures.dart';
-import 'package:marvel_series/src/data/datasources/series_remote_data_source.dart';
-import 'package:marvel_series/src/domain/entities/series.dart';
-import 'package:marvel_series/src/domain/repositories/series.repo.dart';
+import 'package:marvel_series/features/series/core/error/exceptions.dart';
+import 'package:marvel_series/features/series/core/error/failures.dart';
+import 'package:marvel_series/features/series/data/datasources/series_remote_data_source.dart';
+import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/repositories/series.repo.dart';
 import 'package:meta/meta.dart';
 
 class SeriesRepoImpl implements SeriesRepo {

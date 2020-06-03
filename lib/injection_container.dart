@@ -1,11 +1,12 @@
 import 'package:get_it/get_it.dart';
-import 'package:marvel_series/src/blocs/series/series_bloc.dart';
-import 'package:marvel_series/src/data/datasources/series_remote_data_source.dart';
-import 'package:marvel_series/src/data/repositories/series.repo.impl.dart';
-import 'package:marvel_series/src/domain/repositories/series.repo.dart';
-import 'package:marvel_series/src/domain/usecases/series_list.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'features/series/data/datasources/series_remote_data_source.dart';
+import 'features/series/data/repositories/series.repo.impl.dart';
+import 'features/series/domain/repositories/series.repo.dart';
+import 'features/series/domain/usecases/series_list.dart';
+import 'features/series/presentation/bloc/series_bloc.dart';
 
 final sl = GetIt.instance;
 
