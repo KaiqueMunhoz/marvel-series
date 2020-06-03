@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:marvel_series/core/usecases/usecases.dart';
 import 'package:marvel_series/features/series/domain/entities/series.dart';
 import 'package:marvel_series/features/series/domain/repositories/series.repo.dart';
 import 'package:marvel_series/features/series/domain/usecases/get_series.dart';
@@ -24,7 +25,7 @@ void main() {
       // arrange
       when(mockSeriesRepo.getSeries()).thenAnswer((_) async => Right(series));
       // act
-      final result = await usecase();
+      final result = await usecase(NoParams());
       // assert
       expect(result, Right(series));
       verify(mockSeriesRepo.getSeries());
