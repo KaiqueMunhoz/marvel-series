@@ -23,6 +23,6 @@ class SeriesRemoteDataSourceImpl implements SeriesRemoteDataSource {
   Future<List<SerieModel>> seriesList() async {
     final response = await client.get(url, headers: Http.headers);
     Map<String, dynamic> data = json.decode(response.body);
-    return Response.fromJson(data).data.results;
+    return ResponseSerieModel.fromJson(data).data.results;
   }
 }

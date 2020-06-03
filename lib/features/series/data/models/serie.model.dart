@@ -1,16 +1,16 @@
 import 'package:marvel_series/features/series/domain/entities/series.dart';
 import 'package:meta/meta.dart';
 
-class Response {
+class ResponseSerieModel {
   String status;
   Data data;
 
-  Response({
+  ResponseSerieModel({
     this.status,
     this.data,
   });
 
-  Response.fromJson(Map<String, dynamic> json) {
+  ResponseSerieModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     data = json['data'] != null ? new Data.fromJson(json['data']) : null;
   }
