@@ -4,7 +4,10 @@ class BasePage extends StatelessWidget {
   final Widget child;
   final AppBar appBar;
 
-  BasePage({@required this.child, this.appBar});
+  BasePage({
+    @required this.child,
+    this.appBar,
+  });
 
   @override
   Widget build(BuildContext context) {
