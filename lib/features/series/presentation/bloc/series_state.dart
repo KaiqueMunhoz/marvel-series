@@ -16,8 +16,16 @@ class SeriesLoading extends SeriesState {
 
 class SeriesLoaded extends SeriesState {
   final List<Serie> series;
-  SeriesLoaded(this.series);
+  SeriesLoaded({@required this.series});
 
   @override
   List<Object> get props => [series];
+}
+
+class SeriesError extends SeriesState {
+  final String message;
+  SeriesError({@required this.message});
+
+  @override
+  List<Object> get props => [message];
 }

@@ -6,5 +6,5 @@ abstract class SeriesEvent extends Equatable {
 
 class GetSeriesList extends SeriesEvent {
   @override
-  List<Object> get props => null;
+  List<Object> get props => [];
 }

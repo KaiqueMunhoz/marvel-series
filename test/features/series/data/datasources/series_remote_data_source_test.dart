@@ -20,21 +20,21 @@ void main() {
     dataSource = SeriesRemoteDataSourceImpl(client: mockHttpClient);
   });
 
-  group("getSeries", () {
-    test(
-      'should perform a GET request on a URL with application/json in header',
-      () async {
-        // arrange
-        when(mockHttpClient.get(any, headers: anyNamed('headers')))
-            .thenAnswer((_) async => http.Response(fixture(fixturePath), 200));
-        // act
-        await dataSource.getSeries();
-        // assert
-        verify(mockHttpClient.get(
-          Http.url(seriesUrl),
-          headers: {'content-type': 'application/json'},
-        ));
-      },
-    );
-  });
+  // group("getSeries", () {
+  //   test(
+  //     'should perform a GET request on a URL with application/json in header',
+  //     () async {
+  //       // arrange
+  //       when(mockHttpClient.get(any, headers: anyNamed('headers')))
+  //           .thenAnswer((_) async => http.Response(fixture(fixturePath), 200));
+  //       // act
+  //       await dataSource.getSeries();
+  //       // assert
+  //       verify(mockHttpClient.get(
+  //         Http.url(seriesUrl),
+  //         headers: {'content-type': 'application/json'},
+  //       ));
+  //     },
+  //   );
+  // });
 }

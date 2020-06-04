@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:marvel_series/core/error/failures.dart';
+import 'package:marvel_series/core/error/messages.string.dart';
 import 'package:marvel_series/core/usecases/usecases.dart';
 import 'package:marvel_series/features/series/domain/entities/serie.dart';
 import 'package:marvel_series/features/series/domain/usecases/get_series.dart';
@@ -12,10 +14,7 @@ part 'series_state.dart';
 
 class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
   final GetSeries getSeries;
-
-  SeriesBloc({
-    @required this.getSeries,
-  });
+  SeriesBloc({@required this.getSeries});
 
   @override
   SeriesState get initialState => SeriesInitial();
@@ -27,9 +26,10 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
     yield SeriesLoading();
     if (event is GetSeriesList) {
       final failureOrSeries = await getSeries(NoParams());
-      yield* failureOrSeries.fold((failure) async* {}, (series) async* {
-        yield SeriesLoaded(series);
-      });
+      yield failureOrSeries.fold(
+        (failure) => SeriesError(message: mapFailureToMessage(failure)),
+        (series) => SeriesLoaded(series: series),
+      );
     }
   }
 }
