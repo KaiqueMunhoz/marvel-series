@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:marvel_series/core/usecases/usecases.dart';
-import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/entities/serie.dart';
 import 'package:marvel_series/features/series/domain/repositories/series.repo.dart';
 import 'package:marvel_series/features/series/domain/usecases/get_series.dart';
 import 'package:mockito/mockito.dart';

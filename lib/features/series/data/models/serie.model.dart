@@ -1,4 +1,4 @@
-import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/entities/serie.dart';
 import 'package:meta/meta.dart';
 
 class ResponseSerieModel {

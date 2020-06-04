@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:marvel_series/core/usecases/usecases.dart';
-import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/entities/serie.dart';
 import 'package:marvel_series/features/series/domain/usecases/get_series.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';

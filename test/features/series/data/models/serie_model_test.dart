@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel_series/features/series/data/models/serie.model.dart';
-import 'package:marvel_series/features/series/domain/entities/series.dart';
+import 'package:marvel_series/features/series/domain/entities/serie.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 
