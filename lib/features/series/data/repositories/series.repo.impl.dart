@@ -23,7 +23,7 @@ class SeriesRepoImpl implements SeriesRepo {
   Future<Either<Failure, List<Serie>>> getSeries() async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteSeries = await remoteDataSource.seriesList();
+        final remoteSeries = await remoteDataSource.getSeries();
         localDataSource.cacheSeries(remoteSeries);
         return Right(remoteSeries);
       } on ServerException {

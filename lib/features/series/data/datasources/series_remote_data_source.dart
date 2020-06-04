@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 const String seriesUrl = "/v1/public/series";
 
 abstract class SeriesRemoteDataSource {
-  Future<List<SerieModel>> seriesList();
+  Future<List<SerieModel>> getSeries();
 }
 
 class SeriesRemoteDataSourceImpl implements SeriesRemoteDataSource {
@@ -20,8 +20,9 @@ class SeriesRemoteDataSourceImpl implements SeriesRemoteDataSource {
   });
 
   @override
-  Future<List<SerieModel>> seriesList() async {
-    final response = await client.get(url, headers: Http.headers);
+  Future<List<SerieModel>> getSeries() async {
+    final response = await client.get(url);
+
     Map<String, dynamic> data = json.decode(response.body);
     return ResponseSerieModel.fromJson(data).data.results;
   }

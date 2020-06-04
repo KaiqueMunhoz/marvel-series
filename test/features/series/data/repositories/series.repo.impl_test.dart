@@ -7,7 +7,6 @@ import 'package:marvel_series/features/series/data/datasources/series_local_data
 import 'package:marvel_series/features/series/data/datasources/series_remote_data_source.dart';
 import 'package:marvel_series/features/series/data/models/serie.model.dart';
 import 'package:marvel_series/features/series/data/repositories/series.repo.impl.dart';
-import 'package:marvel_series/features/series/domain/entities/serie.dart';
 import 'package:mockito/mockito.dart';
 
 class MockRemoteDataSource extends Mock implements SeriesRemoteDataSource {}
@@ -71,7 +70,7 @@ void main() {
       'should return remote data when the call to remote data source is success',
       () async {
         // arrange
-        when(mockRemoteDataSource.seriesList())
+        when(mockRemoteDataSource.getSeries())
             .thenAnswer((_) async => tSerieModel);
         // act
         final result = await repository.getSeries();
@@ -83,7 +82,7 @@ void main() {
       'should cache the data locally when the call to remote data source is success',
       () async {
         // arrange
-        when(mockRemoteDataSource.seriesList())
+        when(mockRemoteDataSource.getSeries())
             .thenAnswer((_) async => tSerieModel);
         // act
         final result = await repository.getSeries();
@@ -97,7 +96,7 @@ void main() {
       'should return server failure when the call to remote data source is unsuccessful',
       () async {
         // arrange
-        when(mockRemoteDataSource.seriesList()).thenThrow(ServerException());
+        when(mockRemoteDataSource.getSeries()).thenThrow(ServerException());
         // act
         final result = await repository.getSeries();
         // assert
