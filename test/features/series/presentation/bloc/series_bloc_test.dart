@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel_series/core/error/failures.dart';
-import 'package:marvel_series/core/error/messages.string.dart';
 import 'package:marvel_series/core/usecases/usecases.dart';
 import 'package:marvel_series/features/series/data/models/serie.model.dart';
 import 'package:marvel_series/features/series/domain/usecases/get_series.dart';
@@ -58,15 +57,15 @@ void main() {
       () async {
         // arrange
         when(mockGetSeries(any)).thenAnswer((_) async => Right(tSerie));
+        // act
+        bloc.add(GetSeriesList());
         // assert later
         final expected = [
           SeriesInitial(),
           SeriesLoading(),
           SeriesLoaded(series: tSerie),
         ];
-        expectLater(bloc.state, emitsInOrder(expected));
-        // act
-        bloc.add(GetSeriesList());
+        expectLater(bloc, emitsInOrder(expected));
       },
     );
     test(
@@ -74,16 +73,15 @@ void main() {
       () async {
         // arrange
         when(mockGetSeries(any)).thenAnswer((_) async => Left(ServerFailure()));
+        // act
+        bloc.add(GetSeriesList());
         // assert later
         final expected = [
           SeriesInitial(),
           SeriesLoading(),
           SeriesError(message: mapFailureToMessage(ServerFailure())),
         ];
-        expectLater(bloc.state, emitsInOrder(expected));
-        await untilCalled(mockGetSeries(any));
-        // act
-        bloc.add(GetSeriesList());
+        expectLater(bloc, emitsInOrder(expected));
       },
     );
   });
